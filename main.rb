@@ -1,23 +1,32 @@
 # Author : Felipe Arreola
 
 class Button
-attr_reader :label_text, :x, :y, :foreground_color, :background_color 
+attr_reader :label_text, :position, :foreground_color, :background_color 
 
   def initialize(label_text, x, y, foreground_color, background_color)
     @label_text = label_text
-    @x = x
-    @y = y
+    @position = Position.new(x,y)
     @foreground_color = foreground_color
     @background_color = background_color
   end
 
   def draw
-    paint(label_text, x, y, foreground_color, background_color)
+    paint(label_text, position.x, position.y, foreground_color, background_color)
   end
 
   def paint(label_text, x, y, foreground_color, background_color)
-    puts "Label: #{label_text}\n\tPosition: X:#{x}, Y:#{y}\n\tForeground Color:#{foreground_color}\n\tBackground Color:#{background_color}"
+    puts "Label: #{label_text}\n\tPosition: X:#{position.x}, Y:#{position.y}\n\tForeground Color:#{foreground_color}\n\tBackground Color:#{background_color}"
   end
+
+end
+
+class Position
+attr_reader :x, :y
+
+def initialize(x, y)
+  @x = x
+  @y = y
+end
 
 end
 
