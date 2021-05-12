@@ -15,7 +15,7 @@ attr_reader :label_text, :position, :foreground_color, :background_color
   end
 
   def paint(label_text, x, y, foreground_color, background_color)
-    puts "Label: #{label_text}\n\tPosition: X:#{position.x}, Y:#{position.y}\n\tForeground Color:#{foreground_color}\n\tBackground Color:#{background_color}"
+    puts "Label: #{label_text}\n\tPosition: #{position}\n\tForeground Color:#{foreground_color}\n\tBackground Color:#{background_color}"
   end
 
 end
@@ -26,6 +26,10 @@ attr_reader :x, :y
   def initialize(x, y)
     @x = x
     @y = y
+  end
+
+  def to_s
+    "X: #{x}  Y: #{y}"
   end
 
 end
